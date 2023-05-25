@@ -1,7 +1,19 @@
 package AI_Assignments;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.PriorityQueue;
 import java.util.Scanner;
+
+class Pair{
+    int dist;
+    int vertex;
+
+    public Pair(int dist, int vertex) {
+        this.dist = dist;
+        this.vertex = vertex;
+    }
+}
 
 public class Assignment_03 {
     public static void main(String[] args) {
@@ -15,11 +27,43 @@ public class Assignment_03 {
         int[][] adMat = takeInput();
 //        primsAlgo(adMat);
 
-        
+//        TODO Dijkstras Algorithm
+        //From a source node, find shortest distance to all the other nodes
+        dijkstrasAlgorithm(adMat);
 
 
 
 
+    }
+
+    private static void dijkstrasAlgorithm(int[][] adMat) {
+        int n = adMat.length;
+        int[] distance = new int[n];
+        for (int i = 1; i < n; i++)
+            distance[i] = Integer.MAX_VALUE;
+
+        //this min heap will give us the vertex with minimum distance in O(logn)
+        PriorityQueue<Pair> minHeap = new PriorityQueue<>((a, b) -> a.dist - b.dist);
+        minHeap.add(new Pair(0, 0));
+
+        while (!minHeap.isEmpty()){
+            Pair top = minHeap.poll(); //the vertex with the minimum distance
+            int dist = top.dist, currVertex = top.vertex;
+
+            for (int i = 0; i < n; i++) {
+                if (adMat[currVertex][i] != 0) {// means there is a edge between them
+                    if (distance[i] > (adMat[currVertex][i] + dist)) {
+                        distance[i] = adMat[currVertex][i] + dist;
+
+                        //add to min heap
+                        minHeap.add(new Pair(distance[i], i));
+                    }
+                }
+            }
+
+        }
+
+        System.out.println(Arrays.toString(distance));
     }
 
     private static void primsAlgo(int[][] adMat) {
