@@ -1,15 +1,21 @@
 package AI_Assignments;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Assignment_04 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter n: ");
-        int n = sc.nextInt();
 
-        char[][] board = new char[n][n];
-        nQueens(board, 0, 0, n);
+        try {
+            System.out.print("Enter n: ");
+            int n = sc.nextInt();
+            char[][] board = new char[n][n];
+            nQueens(board, 0, 0, n);
+        }catch (InputMismatchException e){
+            System.out.println("Please enter a valid number!");
+            System.out.println(e.getMessage());
+        }
 
     }
 

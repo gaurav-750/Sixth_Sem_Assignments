@@ -1,32 +1,34 @@
 package AI_Assignments;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class Assignment_01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number of vertices: ");
-        int n = sc.nextInt();
-        System.out.print("Enter the number of edges: ");
-        int e = sc.nextInt();
+
+        try {
+            System.out.print("Enter the number of vertices: ");
+            int n = sc.nextInt();
+            System.out.print("Enter the number of edges: ");
+            int e = sc.nextInt();
 
 //        TODO DFS
 //        int[][] adMat = takeAdjacencyMatrixInput(sc, n, e);
-        // DFS Using Adjacency Matrix
+            // DFS Using Adjacency Matrix
 //        dfs(adMat); // TC -> O(n^2)
 
-        // DFS using Adjacency List
-        ArrayList<ArrayList<Integer>> adList = takeAdjacencyListInput(sc, n, e);
+            // DFS using Adjacency List
+            ArrayList<ArrayList<Integer>> adList = takeAdjacencyListInput(sc, n, e);
 //        dfs2(adList); // TC -> O(n + e)
 
 
 //        TODO BFS
 //        bfs(adList); //bfs using adjacency List
 
-
+        }catch (InputMismatchException e){
+            System.out.println("Please enter a valid number!");
+            System.out.println(e.getMessage());
+        }
 
 
 
