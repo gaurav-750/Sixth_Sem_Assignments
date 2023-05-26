@@ -19,17 +19,17 @@ public class Assignment_03 {
     public static void main(String[] args) {
 
 //        TODO Selection Sort
-//        int[] arr = {5, 2, 1, 11, 19, 13};
-//        selectionSort(arr);
-//        System.out.println(Arrays.toString(arr));
+        int[] arr = {5, 2, 1, 11, 19, 13};
+        selectionSort(arr);
+        System.out.println(Arrays.toString(arr));
 
 //        TODO Prims Algorithm
-        int[][] adMat = takeInput();
+//        int[][] adMat = takeInput();
 //        primsAlgo(adMat);
 
 //        TODO Dijkstras Algorithm
         //From a source node, find shortest distance to all the other nodes
-        dijkstrasAlgorithm(adMat);
+//        dijkstrasAlgorithm(adMat);
 
 
 
