@@ -1,0 +1,26 @@
+<apex:page controller="Calculator_Afternoon">
+    <apex:sectionHeader title="Calculator" subtitle="Scientific Calci" />
+    
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection title="Calci" >
+                <apex:inputText label="First number" html-placeholder="Enter 1st number" value="{!firstNum}" />
+                <apex:inputText label="Second number" html-placeholder="Enter 2nd number" value="{!secondNum}" />
+                <apex:outputText label="Result: " value="{!result}" />
+                <apex:outputText label="Error: " value="{!err}" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom">
+            	<apex:commandButton value="Addition" action="{!addition}" />
+                <apex:commandButton value="Subtract" action="{!subtraction}" />
+                <apex:commandButton value="Multiply" action="{!multiplication}" />
+                <apex:commandButton value="Division" action="{!division}" />
+                <apex:commandButton value="Factorial" action="{!factorial}" />
+                <apex:commandButton value="log10" action="{!log10}" />
+                <apex:commandButton value="Max" action="{!max}" />
+                <apex:commandButton value="Min" action="{!min}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>
