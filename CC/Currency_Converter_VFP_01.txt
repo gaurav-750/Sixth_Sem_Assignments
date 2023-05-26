@@ -1,0 +1,51 @@
+<apex:page controller="CurrencyConv_Afternoon" >
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockSection >
+                
+            	<apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Currency1" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:selectRadio value="{!currency1}" layout="PageDirection" >
+                        <apex:selectOption itemValue="Rupee" itemLabel="Rupee" />
+                        <apex:selectOption itemValue="Dollar" itemLabel="Dollar" />
+                        <apex:selectOption itemValue="Pound" itemLabel="Pound" />
+                    </apex:selectRadio>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Value 1" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:inputText value="{!value1}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Currency1" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:selectRadio value="{!currency2}" layout="PageDirection" >
+                        <apex:selectOption itemValue="Rupee" itemLabel="Rupee" />
+                        <apex:selectOption itemValue="Dollar" itemLabel="Dollar" />
+                        <apex:selectOption itemValue="Pound" itemLabel="Pound" />
+                    </apex:selectRadio>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Result: " />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:inputText value="{!result}" />
+                </apex:pageBlockSectionItem>
+                
+                
+                <apex:outputText label="Error: " value="{!err}" />
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom" >
+            	<apex:commandButton value="Convert" action="{!convert}" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
