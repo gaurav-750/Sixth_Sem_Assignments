@@ -13,9 +13,8 @@ public class Assignment_02 {
         try {
             int[] start = new int[9], goal = {1, 2, 3, 4, 5, 6, 7, 8, -1};
             System.out.println("Enter the start state:");
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 9; i++)
                 start[i] = sc.nextInt();
-            }
 
             print8Puzzle(start);
             solve8Puzzle(start, goal);
@@ -49,8 +48,6 @@ public class Assignment_02 {
                 break;
             }
         }
-        System.out.println("emptyTileIndex = " + emptyTileIndex);
-
 
         //Make 4 Arrays:
         int[] temp1 = Arrays.copyOf(start, 9);
@@ -85,12 +82,6 @@ public class Assignment_02 {
             f4 = heuristic(temp4, goal);
         }
 
-        System.out.println(Arrays.toString(temp1));
-        System.out.println(Arrays.toString(temp2));
-        System.out.println(Arrays.toString(temp3));
-        System.out.println(Arrays.toString(temp4));
-
-        System.out.println(f1 + ", " + f2 + ", " + f3 + ", " + f4);
 
         //find the least heuristic state and make the move
         if (f1 <= f2 && f1 <= f3 && f1 <= f4)
@@ -105,7 +96,6 @@ public class Assignment_02 {
     }
 
     private static int heuristic(int[] temp, int[] goal) {
-        System.out.println(Arrays.toString(temp));
         int h = 0;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -113,8 +103,6 @@ public class Assignment_02 {
                     h += Math.abs((j-i) / 3) + Math.abs((j-i) % 3);
             }
         }
-
-        System.out.println("h: " + h + ", g: " + g);
         return h + g;
     }
 
