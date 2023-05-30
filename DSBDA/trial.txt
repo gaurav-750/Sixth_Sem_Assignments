@@ -1,3 +1,4 @@
-Hello! This is assignment no 10.
-I am Gaurav Jayesh Somani.
-I am a man.
+This is first sentence.
+This is second sentence.
+sentence 3
+sentence 4
